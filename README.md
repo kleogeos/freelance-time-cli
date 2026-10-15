@@ -44,6 +44,8 @@ No account, no subscription, no browser tab that needs to stay open, nothing pho
 
 Free web tools (no install): [invoice generator](https://kleogeos.github.io/freelancer-tools/invoice.html) · [rate calculator](https://kleogeos.github.io/freelancer-tools/rate-calculator.html) · [contract checklist](https://kleogeos.github.io/freelancer-tools/contract-checklist.html)
 
+Send the quote before you start the clock: [freelance-proposal-cli](https://github.com/kleogeos/freelance-proposal-cli).
+
 Need the paperwork beyond tracking — proposals, contracts, invoices, late-payment emails, client scripts? [Freelancer Starter Kit ($15, pay with crypto)](https://kleogeos.github.io/freelancer-tools/kit.html)
 
 Free and will stay free. If it saved you time: [tip with crypto](https://kleogeos.github.io/freelancer-tools/donate.html).
