@@ -1,0 +1,49 @@
+name: Test CLI
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Add hours to two projects and verify the report totals
+        run: |
+          rm -f timesheet.json
+          python track.py add 3.5 acme --note "backfill"
+          python track.py add 2 beta
+          OUT=$(python track.py report --rate 50 --json)
+          echo "$OUT"
+          echo "$OUT" | python -c "
+          import json, sys
+          r = json.load(sys.stdin)
+          assert r['total_hours'] == 5.5, r
+          assert r['by_project']['acme'] == 3.5, r
+          assert r['by_project']['beta'] == 2.0, r
+          assert r['total_due'] == 275.0, r
+          print('PASS: track.py add + report match expected totals')
+          "
+      - name: Verify start/stop and double-start error handling
+        run: |
+          set +e
+          rm -f timesheet.json
+          python track.py start acme
+          python track.py start acme 2>/tmp/err1.txt
+          rc=$?
+          set -e
+          if [ "$rc" -eq 0 ]; then echo "FAIL: double-start should exit non-zero"; exit 1; fi
+          grep -q "Already tracking" /tmp/err1.txt || (echo "FAIL: wrong double-start error message" && cat /tmp/err1.txt && exit 1)
+          echo "PASS: double-start rejected"
+
+          python track.py stop
+          set +e
+          python track.py stop 2>/tmp/err2.txt
+          rc=$?
+          set -e
+          if [ "$rc" -eq 0 ]; then echo "FAIL: double-stop should exit non-zero"; exit 1; fi
+          grep -q "Not currently tracking" /tmp/err2.txt || (echo "FAIL: wrong double-stop error message" && cat /tmp/err2.txt && exit 1)
+          echo "PASS: double-stop rejected"
