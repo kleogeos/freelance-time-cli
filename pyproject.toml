@@ -1,0 +1,17 @@
+[project]
+name = "freelance-time-cli"
+version = "1.0.0"
+description = "Track billable hours per project from the command line. Zero dependencies, local JSON file, no cloud account."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[project.scripts]
+freelance-time = "track:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["track"]
