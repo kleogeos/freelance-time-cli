@@ -40,7 +40,7 @@ Global flag: `--file PATH` — use a different timesheet file (default `timeshee
 
 ### Why a CLI instead of a time-tracking app
 
-No account, no subscription, no browser tab that needs to stay open, nothing phoning home. The timesheet is a plain JSON file — read it, script against it, or point `report --rate` at it when it's invoice day. Pairs with [freelance-invoice-cli](https://github.com/kleogeos/freelance-invoice-cli) for turning the hours into an actual invoice, and [freelance-rate-cli](https://github.com/kleogeos/freelance-rate-cli) for figuring out what the rate should be in the first place.
+No account, no subscription, no browser tab that needs to stay open, nothing phoning home. The timesheet is a plain JSON file — read it, script against it, or point `report --rate` at it when it's invoice day. Pairs with [freelance-invoice-cli](https://github.com/kleogeos/freelance-invoice-cli) for turning the hours into an actual invoice, and [freelance-rate-cli](https://github.com/kleogeos/freelance-rate-cli) for figuring out what the rate should be in the first place. Also pairs with [freelance-expense-cli](https://github.com/kleogeos/freelance-expense-cli) for tracking tax-deductible business expenses.
 
 Free web tools (no install): [invoice generator](https://kleogeos.github.io/freelancer-tools/invoice.html) · [rate calculator](https://kleogeos.github.io/freelancer-tools/rate-calculator.html) · [contract checklist](https://kleogeos.github.io/freelancer-tools/contract-checklist.html)
 
