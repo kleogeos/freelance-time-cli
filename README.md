@@ -1,5 +1,7 @@
 # freelance-time-cli
 
+[![Test CLI](https://github.com/kleogeos/freelance-time-cli/actions/workflows/test.yml/badge.svg)](https://github.com/kleogeos/freelance-time-cli/actions/workflows/test.yml)
+
 Track billable hours per project from the command line. No dependencies, no sign-up, no cloud account — just a local JSON file you can commit, back up, or diff.
 
 ```bash
