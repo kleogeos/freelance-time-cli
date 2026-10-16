@@ -5,6 +5,20 @@ description = "Track billable hours per project from the command line. Zero depe
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
+authors = [{name = "kleogeos", email = "kleogeos@gmail.com"}]
+keywords = ["freelance", "time-tracking", "billable-hours", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial",
+]
+
+[project.urls]
+Homepage = "https://github.com/kleogeos/freelance-time-cli"
+Repository = "https://github.com/kleogeos/freelance-time-cli"
 
 [project.scripts]
 freelance-time = "track:main"
